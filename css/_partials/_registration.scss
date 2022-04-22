@@ -1,0 +1,155 @@
+.registration {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px 0 96px;
+}
+
+.registration-form {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  &__input {
+    @include main-input;
+    color: #222222;
+    &::placeholder {
+      color: #B1B1B1;
+    }
+    &-label {
+      @include input-heading;
+      color: #222222;
+    }
+  }
+  &__description {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    color: #B1B1B1;
+    margin-top: 5px;
+    margin-bottom: 39px;
+  }
+  &__radio {
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+    &-wrapper {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 33px;
+      margin-top: 21px;
+    }
+    &-label {
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 13px;
+      color: #000000;
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__submit-icon {
+    margin-left: 20px;
+    padding-right: 29px;
+    fill: white;
+  }
+  &__submit-button {
+    width: fit-content;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    background-color: $main-pink;
+    border: 1px solid transparent;
+    padding: 16px 0 17px 29px;
+    cursor: pointer;
+    &:hover {
+      background-color: #fff;
+      color: $main-pink;
+      border: 1px solid $main-pink;
+      transition: 0.4s;
+      & .registration-form__submit-icon {
+        fill: $main-pink;
+        transition: 0.4s;
+      }
+    }
+  }
+}
+
+.loyalty-program {
+  width: 652px;
+  &__heading {
+    text-transform: uppercase;
+    @include loyalty-program-text;
+  }
+  &__description {
+    margin: 22px 0;
+    @include loyalty-program-text;
+  }
+  &__perks {
+    list-style-type: none;
+    @include loyalty-program-text;
+  }
+  &__perk {
+    margin-bottom: 16px;
+    padding-left: 42px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &::before {
+      content: url(../../img/checked-icon.svg);
+      margin-left: -42px;
+      padding-right: 20px;
+    }
+    &:hover {
+      transform: scale(1.2) rotate(3deg);
+      transition: 0.6s;
+    }
+  }
+}
+
+@media (max-width: 1190px) {
+  .registration {
+    padding-top: 40px;
+  }
+  .loyalty-program {
+    width: auto;
+    &__heading {
+      font-size: 16px;
+      line-height: 19px;
+    }
+    &__description {
+      font-size: 16px;
+      line-height: 19px;
+    }
+    &__perk {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+  .registration-form {
+    margin-right: 22px;
+  }
+  .registration-form__input {
+    width: 360px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 767px) {
+  .registration {
+    flex-direction: column;
+  }
+  .registration-form {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  .breadcrumb-registration {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+}
